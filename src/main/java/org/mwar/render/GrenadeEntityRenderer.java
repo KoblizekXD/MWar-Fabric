@@ -11,7 +11,7 @@ import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Identifier;
 import org.mwar.Mwar;
-import org.mwar.entity.GrenadeEntity;
+import org.mwar.entity.grenade.GrenadeEntity;
 
 public class GrenadeEntityRenderer extends EntityRenderer<GrenadeEntity> {
 

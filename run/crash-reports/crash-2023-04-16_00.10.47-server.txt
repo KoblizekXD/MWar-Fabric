@@ -11,7 +11,7 @@ java.lang.NullPointerException: Cannot invoke "net.minecraft.item.ItemStack.isEm
 	at net.minecraft.entity.LivingEntity.baseTick(LivingEntity.java:402)
 	at net.minecraft.entity.Entity.tick(Entity.java:469)
 	at net.minecraft.entity.LivingEntity.tick(LivingEntity.java:2361)
-	at org.mwar.entity.GrenadeEntity.tick(GrenadeEntity.java:73)
+	at org.mwar.entity.grenade.GrenadeEntity.tick(GrenadeEntity.java:73)
 	at net.minecraft.server.world.ServerWorld.tickEntity(ServerWorld.java:722)
 	at net.minecraft.world.World.tickEntity(World.java:488)
 	at net.minecraft.server.world.ServerWorld.method_31420(ServerWorld.java:371)
@@ -37,7 +37,7 @@ Stacktrace:
 	at net.minecraft.entity.LivingEntity.baseTick(LivingEntity.java:402)
 	at net.minecraft.entity.Entity.tick(Entity.java:469)
 	at net.minecraft.entity.LivingEntity.tick(LivingEntity.java:2361)
-	at org.mwar.entity.GrenadeEntity.tick(GrenadeEntity.java:73)
+	at org.mwar.entity.grenade.GrenadeEntity.tick(GrenadeEntity.java:73)
 	at net.minecraft.server.world.ServerWorld.tickEntity(ServerWorld.java:722)
 	at net.minecraft.world.World.tickEntity(World.java:488)
 	at net.minecraft.server.world.ServerWorld.method_31420(ServerWorld.java:371)
@@ -46,7 +46,7 @@ Stacktrace:
 
 -- Entity being ticked --
 Details:
-	Entity Type: mwar:grenade_entity (org.mwar.entity.GrenadeEntity)
+	Entity Type: mwar:grenade_entity (org.mwar.entity.grenade.GrenadeEntity)
 	Entity ID: 1
 	Entity Name: entity.mwar.grenade_entity
 	Entity's Exact location: 4.56, -59.80, 3.51

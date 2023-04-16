@@ -5,7 +5,7 @@ import net.minecraft.client.model.ModelPartBuilder;
 import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.entity.model.EntityModel;
 import net.minecraft.client.util.math.MatrixStack;
-import org.mwar.entity.GrenadeEntity;
+import org.mwar.entity.grenade.GrenadeEntity;
 
 import java.util.ArrayList;
 import java.util.HashMap;

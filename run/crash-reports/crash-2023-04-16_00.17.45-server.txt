@@ -44,7 +44,7 @@ Stacktrace:
 
 -- Entity being ticked --
 Details:
-	Entity Type: mwar:grenade_entity (org.mwar.entity.GrenadeEntity)
+	Entity Type: mwar:grenade_entity (org.mwar.entity.grenade.GrenadeEntity)
 	Entity ID: 11
 	Entity Name: entity.mwar.grenade_entity
 	Entity's Exact location: 34.37, -59.80, 20.19

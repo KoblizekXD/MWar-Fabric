@@ -1,18 +1,15 @@
 package org.mwar;
 
 import net.fabricmc.api.ModInitializer;
-import dev.lazurite.rayon.api.event.collision.ElementCollisionEvents;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
-import net.minecraft.block.Blocks;
 import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.SpawnGroup;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ItemGroups;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -20,7 +17,8 @@ import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.mwar.entity.GrenadeEntity;
+import org.mwar.entity.grenade.GrenadeEntity;
+import org.mwar.entity.grenade.SmokeGrenadeEntity;
 import org.mwar.item.GrenadeItem;
 
 public class Mwar implements ModInitializer {
@@ -36,7 +34,33 @@ public class Mwar implements ModInitializer {
                     .trackRangeBlocks(80)
                     .build()
     );
+    public static EntityType<SmokeGrenadeEntity> SMOKE_GRENADE_ENTITY = Registry.register(Registries.ENTITY_TYPE,
+            new Identifier(MODID, "smoke_entity"),
+            FabricEntityTypeBuilder.createLiving()
+                    .entityFactory(SmokeGrenadeEntity::new)
+                    .spawnGroup(SpawnGroup.MISC)
+                    .defaultAttributes(LivingEntity::createLivingAttributes)
+                    .dimensions(EntityDimensions.fixed(0.25f, 0.5f))
+                    .trackRangeBlocks(80)
+                    .build()
+    );
     public static GrenadeItem GRENADE_ITEM = Registry.register(Registries.ITEM, new Identifier(MODID, "grenade_item"), new GrenadeItem(new Item.Settings().maxCount(1)));
+    public static GrenadeItem SMOKE_GRENADE_AQUA = Registry.register(Registries.ITEM, new Identifier(MODID, "smoke_aqua"), new GrenadeItem(new Item.Settings().maxCount(1)));
+    public static GrenadeItem SMOKE_GRENADE_BLACK = Registry.register(Registries.ITEM, new Identifier(MODID, "smoke_black"), new GrenadeItem(new Item.Settings().maxCount(1)));
+    public static GrenadeItem SMOKE_GRENADE_BLUE = Registry.register(Registries.ITEM, new Identifier(MODID, "smoke_blue"), new GrenadeItem(new Item.Settings().maxCount(1)));
+    public static GrenadeItem SMOKE_GRENADE_DARK_AQUA = Registry.register(Registries.ITEM, new Identifier(MODID, "smoke_dark_aqua"), new GrenadeItem(new Item.Settings().maxCount(1)));
+    public static GrenadeItem SMOKE_GRENADE_DARK_BLUE = Registry.register(Registries.ITEM, new Identifier(MODID, "smoke_dark_blue"), new GrenadeItem(new Item.Settings().maxCount(1)));
+    public static GrenadeItem SMOKE_GRENADE_DARK_GRAY = Registry.register(Registries.ITEM, new Identifier(MODID, "smoke_dark_gray"), new GrenadeItem(new Item.Settings().maxCount(1)));
+    public static GrenadeItem SMOKE_GRENADE_DARK_GREEN = Registry.register(Registries.ITEM, new Identifier(MODID, "smoke_dark_green"), new GrenadeItem(new Item.Settings().maxCount(1)));
+    public static GrenadeItem SMOKE_GRENADE_DARK_PURPLE = Registry.register(Registries.ITEM, new Identifier(MODID, "smoke_dark_purple"), new GrenadeItem(new Item.Settings().maxCount(1)));
+    public static GrenadeItem SMOKE_GRENADE_DARK_RED = Registry.register(Registries.ITEM, new Identifier(MODID, "smoke_dark_red"), new GrenadeItem(new Item.Settings().maxCount(1)));
+    public static GrenadeItem SMOKE_GRENADE_GOLD = Registry.register(Registries.ITEM, new Identifier(MODID, "smoke_gold"), new GrenadeItem(new Item.Settings().maxCount(1)));
+    public static GrenadeItem SMOKE_GRENADE_GRAY = Registry.register(Registries.ITEM, new Identifier(MODID, "smoke_gray"), new GrenadeItem(new Item.Settings().maxCount(1)));
+    public static GrenadeItem SMOKE_GRENADE_GREEN = Registry.register(Registries.ITEM, new Identifier(MODID, "smoke_green"), new GrenadeItem(new Item.Settings().maxCount(1)));
+    public static GrenadeItem SMOKE_GRENADE_LIGHT_PURPLE = Registry.register(Registries.ITEM, new Identifier(MODID, "smoke_light_purple"), new GrenadeItem(new Item.Settings().maxCount(1)));
+    public static GrenadeItem SMOKE_GRENADE_RED = Registry.register(Registries.ITEM, new Identifier(MODID, "smoke_red"), new GrenadeItem(new Item.Settings().maxCount(1)));
+    public static GrenadeItem SMOKE_GRENADE_WHITE = Registry.register(Registries.ITEM, new Identifier(MODID, "smoke_white"), new GrenadeItem(new Item.Settings().maxCount(1)));
+    public static GrenadeItem SMOKE_GRENADE_YELLOW = Registry.register(Registries.ITEM, new Identifier(MODID, "smoke_yellow"), new GrenadeItem(new Item.Settings().maxCount(1)));
     public static SoundEvent GRENADE_BOUNCE_1 = SoundEvent.of(new Identifier(MODID,"grenade_bounce_1"));
     public static SoundEvent GRENADE_BOUNCE_2 = SoundEvent.of(new Identifier(MODID,"grenade_bounce_2"));
     public static SoundEvent GRENADE_BOUNCE_3 = SoundEvent.of(new Identifier(MODID,"grenade_bounce_3"));
@@ -62,6 +86,26 @@ public class Mwar implements ModInitializer {
     @Override
     public void onInitialize() {
         // Item group registration
-        ItemGroupEvents.modifyEntriesEvent(ITEM_GROUP).register(content -> content.add(GRENADE_ITEM));
+        ItemGroupEvents.modifyEntriesEvent(ITEM_GROUP).register(content -> {
+            content.add(GRENADE_ITEM);
+            content.add(SMOKE_GRENADE_AQUA);
+            content.add(SMOKE_GRENADE_RED);
+            content.add(SMOKE_GRENADE_DARK_BLUE);
+            content.add(SMOKE_GRENADE_DARK_GRAY);
+            content.add(SMOKE_GRENADE_DARK_GREEN);
+            content.add(SMOKE_GRENADE_DARK_BLUE);
+            content.add(SMOKE_GRENADE_DARK_RED);
+            content.add(SMOKE_GRENADE_DARK_PURPLE);
+            content.add(SMOKE_GRENADE_LIGHT_PURPLE);
+            content.add(SMOKE_GRENADE_DARK_AQUA);
+            content.add(SMOKE_GRENADE_BLACK);
+            content.add(SMOKE_GRENADE_BLUE);
+            content.add(SMOKE_GRENADE_GOLD);
+            content.add(SMOKE_GRENADE_GRAY);
+            content.add(SMOKE_GRENADE_GREEN);
+            content.add(SMOKE_GRENADE_WHITE);
+            content.add(SMOKE_GRENADE_YELLOW);
+
+        });
     }
 }
