@@ -9,13 +9,10 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
-import net.minecraft.util.math.Vec2f;
 import net.minecraft.util.math.Vec3d;
-import net.minecraft.util.math.Vec3i;
-import net.minecraft.world.RaycastContext;
 import net.minecraft.world.World;
 import org.mwar.Mwar;
-import org.mwar.entity.GrenadeEntity;
+import org.mwar.entity.grenade.GrenadeEntity;
 
 
 import java.util.Objects;
@@ -34,7 +31,7 @@ public class GrenadeItem extends Item {
         GrenadeEntity entity = Objects.requireNonNull(Mwar.GRENADE_ENTITY.create(world));
         if (!user.isCreative()) {
             itemStack.decrement(1);
-        }
+         }
         if (!world.isClient()) {
             //do pre-stuff
             Vec3d playerPos = user.getCameraPosVec(1.0f);
@@ -53,12 +50,10 @@ public class GrenadeItem extends Item {
                 if (element == entity && impulse > 0.5) {
                     entity.bounceSound(world);
                 }
-            });
+           });
             return TypedActionResult.success(itemStack);
         }
 
         return TypedActionResult.pass(itemStack);
     }
-
-
 }
