@@ -70,8 +70,8 @@ public class GrenadeEntity extends LivingEntity implements EntityPhysicsElement 
         this.fuse--;
 
         if (this.fuse <= 0) {
-            this.world.createExplosion(this, this.getX(), this.getY(), this.getZ(), 4.0F, World.ExplosionSourceType.TNT);
             discard();
+            this.world.createExplosion(this, this.getX(), this.getY(), this.getZ(), 4.0F, World.ExplosionSourceType.TNT);
         }
     }
 

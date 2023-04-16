@@ -10,7 +10,6 @@ import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import org.mwar.Mwar;
-import org.mwar.entity.grenade.GrenadeEntity;
 import org.mwar.entity.grenade.SmokeGrenadeEntity;
 
 import java.util.Objects;
