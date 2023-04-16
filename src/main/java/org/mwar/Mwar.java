@@ -21,8 +21,13 @@ import org.mwar.entity.grenade.GrenadeEntity;
 import org.mwar.entity.grenade.SmokeGrenadeEntity;
 import org.mwar.item.GrenadeItem;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Set;
+
 public class Mwar implements ModInitializer {
     public static final String MODID = "mwar";
+    public static final ArrayList<SoundEvent> soundList = new ArrayList<>();
     public static final Logger LOGGER = LogManager.getLogger("MWar");
     public static EntityType<GrenadeEntity> GRENADE_ENTITY = Registry.register(Registries.ENTITY_TYPE,
             new Identifier(MODID, "grenade_entity"),
@@ -85,6 +90,7 @@ public class Mwar implements ModInitializer {
             .build();
     @Override
     public void onInitialize() {
+        soundList.addAll(Arrays.asList(GRENADE_BOUNCE_1,GRENADE_BOUNCE_2,GRENADE_BOUNCE_3,CAN_BOUNCE1_1,CAN_BOUNCE1_2,CAN_BOUNCE2_1,CAN_BOUNCE2_2,CAN_BOUNCE3_1,CAN_BOUNCE3_2,CAN_BOUNCE4_1,GRENADE_PIN_1,GRENADE_PIN_2,GRENADE_PIN_3,GRENADE_PIN_4,GRENADE_PIN_5,GRENADE_PIN_6));
         // Item group registration
         ItemGroupEvents.modifyEntriesEvent(ITEM_GROUP).register(content -> {
             content.add(GRENADE_ITEM);
