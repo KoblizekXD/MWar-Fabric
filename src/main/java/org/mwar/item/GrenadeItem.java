@@ -11,6 +11,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.math.Vec2f;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.math.Vec3i;
 import net.minecraft.world.RaycastContext;
 import net.minecraft.world.World;
 import org.mwar.Mwar;
@@ -30,7 +31,6 @@ public class GrenadeItem extends Item {
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         //pre setup
         final ItemStack itemStack = user.getStackInHand(hand);
-        var hitResult = raycast(world, user, RaycastContext.FluidHandling.NONE);
         GrenadeEntity entity = Objects.requireNonNull(Mwar.GRENADE_ENTITY.create(world));
         if (!user.isCreative()) {
             itemStack.decrement(1);
@@ -42,7 +42,7 @@ public class GrenadeItem extends Item {
             //play throw sound
             world.playSound(null, user.getX(), user.getY(), user.getZ(), Mwar.GRENADE_PULL, SoundCategory.PLAYERS, 1.0F, 1.0F);
             //spawn the item in front of the player
-            final Vec3d spawnPos = playerPos.add(Vec3d.fromPolar(new Vec2f((float) user.getRotationVector().x, (float) user.getRotationVector().y)));
+            final Vec3d spawnPos = playerPos.add(Vec3d.fromPolar(user.getRotationClient().add(1.0f)));
             entity.setPosition(spawnPos);
             entity.setFuse(ThreadLocalRandom.current().nextInt(60,100));
             entity.resetPosition();
