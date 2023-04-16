@@ -34,7 +34,7 @@ public class SmokeGrenadeItem extends Item {
             Vec3d playerPos = user.getCameraPosVec(1.0f);
             final float offset = 1.0f;
             //play throw sound
-            world.playSound(null, user.getX(), user.getY(), user.getZ(), Mwar.GRENADE_PIN_1, SoundCategory.PLAYERS, 5.0F, 1.0F);
+            world.playSound(null, user.getX(), user.getY(), user.getZ(), Mwar.GRENADE_PIN_6, SoundCategory.PLAYERS, 1.0F, 1.0F);
             //spawn the item in front of the player
             final Vec3d spawnPos = playerPos.add(Vec3d.fromPolar(user.getRotationClient().add(1.0f)));
             entity.setPosition(spawnPos);

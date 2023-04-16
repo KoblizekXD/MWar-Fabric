@@ -61,7 +61,7 @@ public class GrenadeEntity extends LivingEntity implements EntityPhysicsElement 
         return null;
     }
     public void bounceSound(World level) {
-        level.playSound(null, getX(), getY(), getZ(), Mwar.GRENADE_BOUNCE_1, SoundCategory.BLOCKS, 1.0f, ThreadLocalRandom.current().nextFloat(0.8f,1.0f));
+        level.playSound(null, getX(), getY(), getZ(), Mwar.CAN_BOUNCE3_2, SoundCategory.BLOCKS, 1.0f, ThreadLocalRandom.current().nextFloat(0.8f,1.0f));
     }
 
     @Override
