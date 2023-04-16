@@ -1,0 +1,8 @@
+{
+  "item.mwar.grenade_item": "F1 Grenade",
+  "item.mwar.smoke_white": "White Smoke Grenade",
+  "sounds.mwar.grenade_bounce": "Grenade Bounce",
+  "sounds.mwar.grenade_pull": "Grenade Pull",
+  "sounds.mwar.grenade_detonate": "Grenade Detonate",
+  "itemGroup.mwar.group": "MWar"
+}

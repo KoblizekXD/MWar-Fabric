@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "mwar",
+  "version": "${version}",
+  "name": "mwar",
+  "description": "",
+  "authors": [],
+  "contact": {
+    "repo": "https://github.com/Slosa/mwar"
+  },
+  "license": "All-Rights-Reserved",
+  "icon": "assets/mwar/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "org.mwar.client.MwarClient"
+    ],
+    "main": [
+      "org.mwar.Mwar"
+    ]
+  },
+  "mixins": [
+    "mwar.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}

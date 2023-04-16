@@ -1,0 +1,20 @@
+{
+  "grenade_bounce": {
+    "subtitle": "sounds.mwar.grenade_bounce",
+    "sounds": [
+      "mwar:grenade_bounce"
+    ]
+  },
+  "grenade_pull": {
+    "subtitle": "sounds.mwar.grenade_pull",
+    "sounds": [
+      "mwar:grenade_pull"
+    ]
+  },
+  "grenade_detonate": {
+    "subtitle": "sounds.mwar.grenade_detonate",
+    "sounds": [
+      "mwar:grenade_detonate"
+    ]
+  }
+}
