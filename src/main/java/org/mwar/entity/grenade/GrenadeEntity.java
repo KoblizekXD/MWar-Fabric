@@ -25,7 +25,6 @@ import java.util.concurrent.ThreadLocalRandom;
 public class GrenadeEntity extends LivingEntity implements EntityPhysicsElement {
 
     private final EntityRigidBody rigidBody;
-    private int result;
     private int fuse = 80;
 
     public GrenadeEntity(EntityType<? extends LivingEntity> entityType, World level) {
@@ -61,7 +60,7 @@ public class GrenadeEntity extends LivingEntity implements EntityPhysicsElement 
         return null;
     }
     public void bounceSound(World level) {
-        level.playSound(null, getX(), getY(), getZ(), Mwar.CAN_BOUNCE3_2, SoundCategory.BLOCKS, 1.0f, ThreadLocalRandom.current().nextFloat(0.8f,1.0f));
+        level.playSound(null, getX(), getY(), getZ(), Mwar.soundList.get(ThreadLocalRandom.current().nextInt(0,2)), SoundCategory.BLOCKS, 1.0f, ThreadLocalRandom.current().nextFloat(0.8f,1.0f));
     }
 
     @Override
@@ -72,7 +71,6 @@ public class GrenadeEntity extends LivingEntity implements EntityPhysicsElement 
 
         if (this.fuse <= 0) {
             this.world.createExplosion(this, this.getX(), this.getY(), this.getZ(), 4.0F, World.ExplosionSourceType.TNT);
-            world.playSound(null, this.getX(), this.getY(), this.getZ(), Mwar.GRENADE_DETONATE, SoundCategory.PLAYERS, 5.0F, 1.0F);
             discard();
         }
     }

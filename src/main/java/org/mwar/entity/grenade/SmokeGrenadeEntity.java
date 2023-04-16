@@ -14,10 +14,12 @@ import net.minecraft.sound.SoundCategory;
 import net.minecraft.util.Arm;
 import net.minecraft.world.World;
 import org.mwar.Mwar;
+import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.core.animatable.GeoAnimatable;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.core.animatable.instance.SingletonAnimatableInstanceCache;
 import software.bernie.geckolib.core.animation.AnimatableManager;
+import software.bernie.geckolib.util.GeckoLibUtil;
 
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
@@ -25,7 +27,7 @@ import java.util.concurrent.ThreadLocalRandom;
 public class SmokeGrenadeEntity extends LivingEntity implements EntityPhysicsElement {
 
     private final EntityRigidBody rigidBody;
-    private int result;
+
     private int fuse = 80;
 
     public SmokeGrenadeEntity(EntityType<? extends LivingEntity> entityType, World level) {
@@ -55,7 +57,6 @@ public class SmokeGrenadeEntity extends LivingEntity implements EntityPhysicsEle
     @Override
     public void equipStack(EquipmentSlot slot, ItemStack stack) {
     }
-
     @Override
     public Arm getMainArm() {
         return null;
@@ -64,7 +65,6 @@ public class SmokeGrenadeEntity extends LivingEntity implements EntityPhysicsEle
         level.playSound(null, getX(), getY(), getZ(), Mwar.soundList.get(ThreadLocalRandom.current().nextInt(3,9)), SoundCategory.BLOCKS, 1.0f, ThreadLocalRandom.current().nextFloat(0.8f,1.0f));
 
     }
-
     @Override
     public boolean isSilent() {
         return true;

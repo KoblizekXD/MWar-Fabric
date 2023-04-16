@@ -51,7 +51,7 @@ public class Mwar implements ModInitializer {
     );
     public static GrenadeItem GRENADE_ITEM = Registry.register(Registries.ITEM, new Identifier(MODID, "grenade_item"), new GrenadeItem(new Item.Settings().maxCount(1)));
     public static GrenadeItem SMOKE_GRENADE_AQUA = Registry.register(Registries.ITEM, new Identifier(MODID, "smoke_aqua"), new GrenadeItem(new Item.Settings().maxCount(1)));
-    public static GrenadeItem SMOKE_GRENADE_BLACK = Registry.register(Registries.ITEM, new Identifier(MODID, "smoke_black"), new GrenadeItem(new Item.Settings().maxCount(1)));
+    public static GrenadeItem SMOKE_GRENADE_DARK = Registry.register(Registries.ITEM, new Identifier(MODID, "smoke_dark"), new GrenadeItem(new Item.Settings().maxCount(1)));
     public static GrenadeItem SMOKE_GRENADE_BLUE = Registry.register(Registries.ITEM, new Identifier(MODID, "smoke_blue"), new GrenadeItem(new Item.Settings().maxCount(1)));
     public static GrenadeItem SMOKE_GRENADE_DARK_AQUA = Registry.register(Registries.ITEM, new Identifier(MODID, "smoke_dark_aqua"), new GrenadeItem(new Item.Settings().maxCount(1)));
     public static GrenadeItem SMOKE_GRENADE_DARK_BLUE = Registry.register(Registries.ITEM, new Identifier(MODID, "smoke_dark_blue"), new GrenadeItem(new Item.Settings().maxCount(1)));
@@ -84,7 +84,6 @@ public class Mwar implements ModInitializer {
     public static SoundEvent GRENADE_PIN_6 = SoundEvent.of(new Identifier(MODID,"grenade_pin_6"));
     public static SoundEvent GRENADE_DETONATE = SoundEvent.of(new Identifier(MODID,"grenade_detonate"));
 
-
     public static final ItemGroup ITEM_GROUP = FabricItemGroup.builder(new Identifier(MODID, "group"))
             .icon(() -> new ItemStack(GRENADE_ITEM))
             .build();
@@ -104,7 +103,7 @@ public class Mwar implements ModInitializer {
             content.add(SMOKE_GRENADE_DARK_PURPLE);
             content.add(SMOKE_GRENADE_LIGHT_PURPLE);
             content.add(SMOKE_GRENADE_DARK_AQUA);
-            content.add(SMOKE_GRENADE_BLACK);
+            content.add(SMOKE_GRENADE_DARK);
             content.add(SMOKE_GRENADE_BLUE);
             content.add(SMOKE_GRENADE_GOLD);
             content.add(SMOKE_GRENADE_GRAY);
