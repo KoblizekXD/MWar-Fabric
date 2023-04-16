@@ -12,6 +12,6 @@ public class MwarClient implements ClientModInitializer {
      */
     @Override
     public void onInitializeClient() {
-        EntityRendererRegistry.register(Mwar.GRENADE_ENTITY, (context) -> new GrenadeEntityRenderer(context, new GrenadeEntityModel(3, 6, 3)));
+        EntityRendererRegistry.register(Mwar.GRENADE_ENTITY, (context) -> new GrenadeEntityRenderer(context, new GrenadeEntityModel(4, 8, 4)));
     }
 }

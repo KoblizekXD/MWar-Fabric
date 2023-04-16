@@ -37,8 +37,22 @@ public class Mwar implements ModInitializer {
                     .build()
     );
     public static GrenadeItem GRENADE_ITEM = Registry.register(Registries.ITEM, new Identifier(MODID, "grenade_item"), new GrenadeItem(new Item.Settings().maxCount(1)));
-    public static SoundEvent GRENADE_BOUNCE = SoundEvent.of(new Identifier(MODID,"grenade_bounce"));
-    public static SoundEvent GRENADE_PULL = SoundEvent.of(new Identifier(MODID,"grenade_pull"));
+    public static SoundEvent GRENADE_BOUNCE_1 = SoundEvent.of(new Identifier(MODID,"grenade_bounce_1"));
+    public static SoundEvent GRENADE_BOUNCE_2 = SoundEvent.of(new Identifier(MODID,"grenade_bounce_2"));
+    public static SoundEvent GRENADE_BOUNCE_3 = SoundEvent.of(new Identifier(MODID,"grenade_bounce_3"));
+    public static SoundEvent CAN_BOUNCE1_1 = SoundEvent.of(new Identifier(MODID,"can_bounce1_1"));
+    public static SoundEvent CAN_BOUNCE1_2 = SoundEvent.of(new Identifier(MODID,"can_bounce1_2"));
+    public static SoundEvent CAN_BOUNCE2_1 = SoundEvent.of(new Identifier(MODID,"can_bounce2_1"));
+    public static SoundEvent CAN_BOUNCE2_2 = SoundEvent.of(new Identifier(MODID,"can_bounce2_2"));
+    public static SoundEvent CAN_BOUNCE3_1 = SoundEvent.of(new Identifier(MODID,"can_bounce3_1"));
+    public static SoundEvent CAN_BOUNCE3_2 = SoundEvent.of(new Identifier(MODID,"can_bounce3_2"));
+    public static SoundEvent CAN_BOUNCE4_1 = SoundEvent.of(new Identifier(MODID,"can_bounce4_1"));
+    public static SoundEvent GRENADE_PIN_1 = SoundEvent.of(new Identifier(MODID,"grenade_pin_1"));
+    public static SoundEvent GRENADE_PIN_2 = SoundEvent.of(new Identifier(MODID,"grenade_pin_2"));
+    public static SoundEvent GRENADE_PIN_3 = SoundEvent.of(new Identifier(MODID,"grenade_pin_3"));
+    public static SoundEvent GRENADE_PIN_4 = SoundEvent.of(new Identifier(MODID,"grenade_pin_4"));
+    public static SoundEvent GRENADE_PIN_5 = SoundEvent.of(new Identifier(MODID,"grenade_pin_5"));
+    public static SoundEvent GRENADE_PIN_6 = SoundEvent.of(new Identifier(MODID,"grenade_pin_6"));
     public static SoundEvent GRENADE_DETONATE = SoundEvent.of(new Identifier(MODID,"grenade_detonate"));
 
 
